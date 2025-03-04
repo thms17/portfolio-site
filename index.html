@@ -1247,38 +1247,5 @@ a,
     <script src="https://bucket.thomasetscheidt.de/gridScrollAnimation.js"></script>
     <script src="https://bucket.thomasetscheidt.de/colorChangeOnScroll.js"></script>
     <script src="https://bucket.thomasetscheidt.de/navbarDisappear.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector("form[data-netlify='true']")
-        const successMessage = document.querySelector(".success-message")
-        const errorMessage = document.querySelector(".error-message")
-
-        if (form) {
-          form.addEventListener("submit", async function (event) {
-            event.preventDefault() // Verhindert das Neuladen der Seite
-
-            const formData = new FormData(form)
-
-            try {
-              const response = await fetch("/", {
-                method: "POST",
-                body: formData,
-              })
-
-              if (response.ok) {
-                form.reset()
-                successMessage.style.display = "block"
-                errorMessage.style.display = "none"
-              } else {
-                throw new Error("Formular konnte nicht gesendet werden.")
-              }
-            } catch (error) {
-              successMessage.style.display = "none"
-              errorMessage.style.display = "block"
-            }
-          })
-        }
-      })
-    </script>
   </body>
 </html>
