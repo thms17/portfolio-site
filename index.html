@@ -1247,5 +1247,35 @@ a,
     <script src="https://bucket.thomasetscheidt.de/gridScrollAnimation.js"></script>
     <script src="https://bucket.thomasetscheidt.de/colorChangeOnScroll.js"></script>
     <script src="https://bucket.thomasetscheidt.de/navbarDisappear.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form")
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault()
+
+          const formData = new FormData(form)
+
+          try {
+            const response = await fetch("/", {
+              method: "POST",
+              body: new URLSearchParams(formData).toString(),
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            })
+
+            if (response.ok) {
+              document.querySelector(".success-message").style.display = "block"
+              document.querySelector(".error-message").style.display = "none"
+              form.reset()
+            } else {
+              throw new Error("Form submission failed")
+            }
+          } catch (error) {
+            document.querySelector(".success-message").style.display = "none"
+            document.querySelector(".error-message").style.display = "block"
+          }
+        })
+      })
+    </script>
   </body>
 </html>
