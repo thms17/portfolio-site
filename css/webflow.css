@@ -304,15 +304,18 @@ button,
   margin: 0 0 15px;
 }
 .w-form-done {
+  margin-top: 20px;
   display: none;
   padding: 20px;
   text-align: center;
   background-color: #dddddd;
 }
 .w-form-fail {
+  margin-top: 20px;
   display: none;
   margin-top: 10px;
   padding: 10px;
+  text-align: center;
   background-color: #ffdede;
 }
 label {
