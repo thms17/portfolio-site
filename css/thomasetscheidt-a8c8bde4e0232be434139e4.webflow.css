@@ -1589,12 +1589,16 @@ figcaption {
   color: var(--dark-slate-grey);
   background-color: #d1ebd1;
   border-radius: 10px;
+  margin-top: 2rem;
+  padding: 1.25rem;
 }
 
 .error-message {
   color: var(--dark-slate-grey);
   background-color: #ffcfcf;
   border-radius: 10px;
+  margin-top: 2rem;
+  padding: 1.25rem;
 }
 
 .calendly-button {
