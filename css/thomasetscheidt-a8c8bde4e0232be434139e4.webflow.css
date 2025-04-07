@@ -1701,6 +1701,10 @@ figcaption {
   height: 100%;
 }
 
+.display-none {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   h2 {
     font-size: 2rem;
